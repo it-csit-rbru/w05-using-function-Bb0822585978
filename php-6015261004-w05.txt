@@ -3,28 +3,28 @@
 	echo "There were {$number} days in September 2019";
 ?>
 ===================================================================
-2.DateTime::add ¤×Í à¾ÔèÁÇÑ¹ µÒÁ·Õè¡ÓË¹´äÇéàªè¹ÇÑ¹·Õè10 áÅéÇà¾ÔèÁÍÕ¡12 ¡ÅÒÂà»ç¹ÇÑ¹·Õè22 áÊ´§µÒÁ¿ÍÃìáÁµ·ÕèµÑé§äÇé
+2.DateTime::add คือ เพิ่มวัน ตามที่กำหนดไว้เช่นวันที่10 แล้วเพิ่มอีก12 กลายเป็นวันที่22 แสดงตามฟอร์แมตที่ตั้งไว้
 <?php
 	$date = new DateTime('2019-09-10');
 	$date->add(new DateInterval('P12D'));
 	echo $date->format('Y-m-d') . "\n";
 ?>
 ===================================================================
-3.DateTime::modify ¤×Í á¡éä¢à¾ÔèÁ-Å´ÇÑ¹ â´Â¡ÓË¹´¨Ó¹Ç¹ÇÑ¹ áÊ´§µÒÁ¿ÍÃìáÁµ·ÕèµÑé§äÇé
+3.DateTime::modify คือ แก้ไขเพิ่ม-ลดวัน โดยกำหนดจำนวนวัน แสดงตามฟอร์แมตที่ตั้งไว้
 <?php
 	$date = new DateTime('2019-09-21');
 	$date->modify('+2 day');
 	echo $date->format('Y-m-d');
 ?>
 ====================================================================
-4.password_hash ¤×Í ¡ÒÃà¢éÒÃËÑÊ¾ÒÊàÇÔÃì´ 
-ãªè¾ÒÊàÇÔÃì´¤ÓÇèÒ smallpig 
-¨Ðà¢éÒÃËÑÊà»ç¹ $2y$10$2Upp04Y5goZwsgUthHFsQ.kodFScO6n767VijRNlYPAfqVX..eIXe
+4.password_hash คือ การเข้ารหัสพาสเวิร์ด 
+ใช้พาสเวิร์ดคำว่า smallpig 
+จะเข้ารหัสเป็น $2y$10$2Upp04Y5goZwsgUthHFsQ.kodFScO6n767VijRNlYPAfqVX..eIXe
 <?php
 	echo password_hash("smallpig", PASSWORD_DEFAULT);
 ?> 
 =====================================================================
-5.password_verify ¤×Í¡ÒÃÂ×¹ÂÑ¹¾ÒÊàÇÔÃì´·ÕèÁÕÍÂÙèµÃ§¡Ñº·Õèà¢éÒÃËÑÊäÇéÁÑéÂ
+5.password_verify คือการยืนยันพาสเวิร์ดที่มีอยู่ตรงกับที่เข้ารหัสไว้มั้ย
 <?php
 	$hash = '$2y$10$2Upp04Y5goZwsgUthHFsQ.kodFScO6n767VijRNlYPAfqVX..eIXe';
 	if (password_verify('smallpig', $hash)) {
